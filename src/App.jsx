@@ -1,4 +1,6 @@
-import Counter from "./components/Counter";
+import HeroSection from "./components/Blocks/HeroSection";
+import PostsSection from "./components/Blocks/PostsSection";
+import Header from "./components/Header";
 
 export default function App() {
 
@@ -8,18 +10,11 @@ export default function App() {
 
     <div>
 
-      <Counter />
-      <Counter />
-      <Counter />
-      <Counter />
-      <Counter />
-      <Counter />
-      <Counter />
-      <Counter />
-      <Counter />
-      <Counter />
-      <Counter />
-      <Counter />
+      <Header />
+
+      <HeroSection />
+
+      <PostsSection />
 
     </div>
 

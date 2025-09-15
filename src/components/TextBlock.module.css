@@ -1,0 +1,11 @@
+.block_heading {
+    font-size: 36px;
+    color: darkred;
+    font-weight: 700;
+}
+
+.block_text {
+    font-size: 18px;
+    color: #333333;
+    line-height: 200%;
+}
