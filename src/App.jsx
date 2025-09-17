@@ -11,7 +11,9 @@ export default function App() {
     { id: 3, todo: 'Выгулять собаку', completed: true },
   ])
 
-  function toggleComletion(id) {
+  const [newTodo, setNewTodo] = useState('')
+
+  function toggleCompletion(id) {
 
 
     setTodos(
@@ -29,6 +31,20 @@ export default function App() {
     )
   }
 
+  function addTodo(event) {
+    event.preventDefault()
+
+    setTodos(
+      [
+        ...todos,
+        { id: todos.length + 1, todo: newTodo, completed: false }
+      ]
+    )
+
+    setNewTodo('')
+
+  }
+
 
   return (
 
@@ -38,11 +54,16 @@ export default function App() {
         todos.map((элемент_массива) => (
           <div className="flex items-center gap-x-5" style={элемент_массива.completed ? { textDecoration: 'line-through' } : {}}>
             <span>{элемент_массива.id}</span>
-            <input onChange={() => toggleComletion(элемент_массива.id)} checked={элемент_массива.completed} type="checkbox" />
+            <input onChange={() => toggleCompletion(элемент_массива.id)} checked={элемент_массива.completed} type="checkbox" />
             <span>{элемент_массива.todo}</span>
           </div>
         ))
       }
+
+      <form onSubmit={(event) => addTodo(event)}>
+        <input value={newTodo} onInput={(event) => setNewTodo(event.target.value)} type="text" placeholder="Введите новое дело..." />
+        <button>Создать</button>
+      </form>
 
     </div>
 
